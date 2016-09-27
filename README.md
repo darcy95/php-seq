@@ -6,12 +6,12 @@ learned OPAL in the university. This is a fun project to get some feel for an
 FPL in PHP. If you want to know about the beauty of FPL, check following sort
 examples. 
 
-<?
-	include "../class/class_seq.php";
+# Usage examples
 
-    // =========================================
-    // Insertion sort
-    // =========================================
+	include "../class/class_seq.php";
+    	// =========================================
+    	// Insertion sort
+    	// =========================================
 
 	function insertsort($s
 	{
@@ -29,15 +29,9 @@ examples.
 			return ($el <= Seq::ft($s)) ? Seq::addhead($el, $s) : Seq::addhead(Seq::ft($s), insert($el, Seq::rt($s)));
 	}
 
-?>
-
-<?
-	include "../class/class_seq.php";
-
-    // =========================================
-    // Merge sort
-    // =========================================
-
+    	// =========================================
+    	// Merge sort
+    	// =========================================
 	function mergesort($s)
 	{
 		if (Seq::isempty($s))
@@ -77,15 +71,11 @@ examples.
 			}
 		}
 	}
-?>
-
-<?
-	include "../class/class_seq.php";
-
-    // =========================================
-    // Selection sort
-    // =========================================
-
+	
+	
+    	// =========================================
+    	// Selection sort
+    	// =========================================
 	function selectionsort($s)
 	{
 		if (Seq::isempty($s))
@@ -93,15 +83,10 @@ examples.
 		else
 			return Seq::addhead(Seq::minimum($s), selectionsort(Seq::cut(Seq::minimum($s), $s)));
 	}
-?>
 
-<?
-	include "../class/class_seq.php";
-
-    // =========================================
-    // Quick sort
-    // =========================================
-
+	// =========================================
+    	// Quick sort
+    	// =========================================
 	function quicksort($s)
 	{
 		if (Seq::isempty($s))
@@ -115,4 +100,3 @@ examples.
 
 		return Seq::joint(Seq::joint(quicksort($small), $equal), quicksort($great));
 	}
-?>
