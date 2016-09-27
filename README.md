@@ -32,6 +32,8 @@ examples.
 ?>
 
 <?
+	include "../class/class_seq.php";
+
     // =========================================
     // Merge sort
     // =========================================
@@ -78,9 +80,12 @@ examples.
 ?>
 
 <?
+	include "../class/class_seq.php";
+
     // =========================================
     // Selection sort
     // =========================================
+
 	function selectionsort($s)
 	{
 		if (Seq::isempty($s))
@@ -91,6 +96,8 @@ examples.
 ?>
 
 <?
+	include "../class/class_seq.php";
+
     // =========================================
     // Quick sort
     // =========================================
