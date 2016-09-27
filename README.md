@@ -13,7 +13,7 @@ examples.
     // Insertion sort
     // ==================================================================================
 
-	function insertsort($s
+	function insertsort($s)
 	{
 		if (Seq::isempty($s))
 			return Seq::createseq();
