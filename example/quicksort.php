@@ -4,9 +4,7 @@
 	function quicksort($s)
 	{
 		if (Seq::isempty($s))
-		{
 			return Seq::createseq();
-		}
 		else
 		{
 			$small = Seq::select_smaller(Seq::ft($s), $s);

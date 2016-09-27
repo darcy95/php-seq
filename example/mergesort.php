@@ -2,15 +2,11 @@
 	function mergesort($s)
 	{
 		if (Seq::isempty($s))
-		{
 			return Seq::createseq();
-		}
 		else
 		{
 			if (Seq::isatom($s))
-			{
 				return $s;
-			}
 			else
 			{
 				$middle = floor(Seq::count($s) / 2);
@@ -26,31 +22,19 @@
 		if (Seq::isempty($s1))
 		{
 			if (Seq::isempty($s2))
-			{
 				return Seq::createseq();
-			}
 			else
-			{
 				return $s2;
-			}
 		}
 		else
 		{
 			if (Seq::isempty($s2))
-			{
 				return $s1;
-			}
 			else
-			{
 				if (Seq::ft($s1) <= Seq::ft($s2))
-				{
-
 					return Seq::addhead(Seq::ft($s1), merge(Seq::rt($s1), $s2));
-				}
 				else
-				{
 					return Seq::addhead(Seq::ft($s2), merge($s1, Seq::rt($s2)));
-				}
 			}
 		}
 	}

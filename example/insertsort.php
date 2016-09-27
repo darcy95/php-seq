@@ -4,25 +4,17 @@
 	function insertsort($s)
 	{
 		if (Seq::isempty($s))
-		{
 			return Seq::createseq();
-		}
 		else
-		{
 			return insert(Seq::ft($s), insertsort(Seq::rt($s)));
-		}
 	}
 
 	function insert($el, $s)
 	{
 		if (Seq::isempty($s))
-		{
 			return Seq::addhead($el, Seq::createseq());
-		}
 		else
-		{
 			return ($el <= Seq::ft($s)) ? Seq::addhead($el, $s) : Seq::addhead(Seq::ft($s), insert($el, Seq::rt($s)));
-		}
 	}
 
 	$s = Seq::createseq();

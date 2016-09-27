@@ -2,13 +2,9 @@
 	function selectionsort($s)
 	{
 		if (Seq::isempty($s))
-		{
 			return Seq::createseq();
-		}
 		else
-		{
 			return Seq::addhead(Seq::minimum($s), selectionsort(Seq::cut(Seq::minimum($s), $s)));
-		}
 	}
 
 	$s = Seq::createseq();
