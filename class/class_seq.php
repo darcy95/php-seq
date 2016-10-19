@@ -2,7 +2,7 @@
 /* 
 +---------------------------------------------------------------------------------+
 |	Class		: class_seq
-|	Author		: Kimjuhoon (kimjuhoon@gmail.com)
+|	Author		: Juhoon Kim (kimjuhoon@gmail.com)
 |	Copyright	: Free
 |	Version		: 1.02
 |	Last Update : 2006-12-22
