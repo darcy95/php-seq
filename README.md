@@ -2,18 +2,18 @@
 
 php-seq is a Functional-Programming-Language-like linear data structure written
 in PHP. I am a fan of FPL (Functional Programming Language) ever since I
-learned OPAL in the university. This is a fun project to get some feel for an
-FPL in PHP. If you want to know about the beauty of FPL, check following sort
+learned OPAL in the university. This is a fun project to get some feel of an
+FPL in PHP. If you want to know about the beauty of an FPL, check following sort
 examples. 
 
-<?
+# Usage examples
+
 	include "../class/class_seq.php";
-
-    // =========================================
+    // ==================================================================================
     // Insertion sort
-    // =========================================
+    // ==================================================================================
 
-	function insertsort($s
+	function insertsort($s)
 	{
 		if (Seq::isempty($s))
 			return Seq::createseq();
@@ -29,15 +29,12 @@ examples.
 			return ($el <= Seq::ft($s)) ? Seq::addhead($el, $s) : Seq::addhead(Seq::ft($s), insert($el, Seq::rt($s)));
 	}
 
-?>
 
-<?
-	include "../class/class_seq.php";
 
-    // =========================================
+
+    // ==================================================================================
     // Merge sort
-    // =========================================
-
+    // ==================================================================================
 	function mergesort($s)
 	{
 		if (Seq::isempty($s))
@@ -77,15 +74,13 @@ examples.
 			}
 		}
 	}
-?>
-
-<?
-	include "../class/class_seq.php";
-
-    // =========================================
+	
+	
+	
+	
+    // ==================================================================================
     // Selection sort
-    // =========================================
-
+    // ==================================================================================
 	function selectionsort($s)
 	{
 		if (Seq::isempty($s))
@@ -93,15 +88,13 @@ examples.
 		else
 			return Seq::addhead(Seq::minimum($s), selectionsort(Seq::cut(Seq::minimum($s), $s)));
 	}
-?>
-
-<?
-	include "../class/class_seq.php";
-
-    // =========================================
+	
+	
+	
+	
+    // ==================================================================================
     // Quick sort
-    // =========================================
-
+    // ==================================================================================
 	function quicksort($s)
 	{
 		if (Seq::isempty($s))
@@ -115,4 +108,3 @@ examples.
 
 		return Seq::joint(Seq::joint(quicksort($small), $equal), quicksort($great));
 	}
-?>
