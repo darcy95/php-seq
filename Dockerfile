@@ -9,5 +9,5 @@ RUN apt-get update
 RUN apt-get install -y -qq git
 RUN rm -rf html
 ADD index.html /var/www/html/
-ADD class /var/www/html/
-ADD example /var/www/html/
+ADD class /var/www/html/class
+ADD example /var/www/html/example
