@@ -8,4 +8,6 @@ USER root
 RUN apt-get update
 RUN apt-get install -y -qq git
 RUN rm -rf html
-RUN git clone https://github.com/darcy95/php-seq.git html
+ADD index.html /var/www/html/
+ADD class /var/www/html/
+ADD example /var/www/html/
