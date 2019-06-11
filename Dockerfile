@@ -6,7 +6,7 @@ WORKDIR /var/www
 
 USER root
 RUN apt-get update
-RUN apt-get install -y -qq git
+RUN apt-get install -y git
 RUN rm -rf html
 ADD index.html /var/www/html/
 ADD class /var/www/html/class
