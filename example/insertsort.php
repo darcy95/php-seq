@@ -36,3 +36,48 @@
 	echo "<tr><td>Values of \$s after insertsort: </td><td>" . Seq::printl(insertsort($s)) . "</td></tr>";
 	echo "</table>";
 ?>
+
+<pre>
+# =======================
+# Normal insertion sort
+# =======================
+function insertionsort($arr)
+{
+    for ($i = 0 ; $i < count($arr) ; $i++) 
+    {
+        $val = $arr[$i];
+        $j = $i - 1;
+     
+        while ($j >= 0 && $arr[$j] > $val)
+        {
+            $arr[$j + 1] = $arr[$j];
+            $j--;
+        }
+        
+        $arr[$j + 1] = $val;
+    }
+
+    return $arr;
+}
+
+
+# =======================
+# using php-seq ....
+# =======================
+
+function insertsort($s)
+{
+    if (Seq::isempty($s))
+        return Seq::createseq();
+    else
+        return insert(Seq::ft($s), insertsort(Seq::rt($s)));
+}
+
+function insert($el, $s)
+{
+    if (Seq::isempty($s))
+        return Seq::addhead($el, Seq::createseq());
+    else
+        return ($el <= Seq::ft($s)) ? Seq::addhead($el, $s) : Seq::addhead(Seq::ft($s), insert($el, Seq::rt($s)));
+}
+</pre>

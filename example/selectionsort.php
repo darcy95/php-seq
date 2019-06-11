@@ -1,4 +1,6 @@
 <?
+	include "../class/class_seq.php";
+
 	function selectionsort($s)
 	{
 		if (Seq::isempty($s))

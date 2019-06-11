@@ -1,4 +1,6 @@
 <?
+	include "../class/class_seq.php";
+
 	function mergesort($s)
 	{
 		if (Seq::isempty($s))
