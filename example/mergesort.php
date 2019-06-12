@@ -108,7 +108,7 @@ function merge($l, $r)
         }
     }
 
-    while ($leftIndex<count($l))
+    while ($leftIndex < count($l))
     {
         $result[] = $l[$leftIndex];
         $leftIndex++;
