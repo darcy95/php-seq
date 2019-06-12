@@ -1,3 +1,14 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>PHP-SEQ: FPL(Functional Programming Language)-like linear data structure in PHP</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+	<h1 class="display-4">PHP-SEQ</h1>
+	<h1><small class="text-muted">Insertion Sort Example</small></h1>
 <?
 	include "../class/class_seq.php";
 
@@ -30,40 +41,38 @@
 	$s = Seq::addtail($s, 24);
 	$s = Seq::addtail($s, 16);
 	$s = Seq::addtail($s, 49);
-	echo "<br>";
-	echo "<table align='center' width='800' cellpadding='5' cellspacing='0' border='1'>";
-	echo "<tr><td>Values of \$s before insertsort: </td><td>" . Seq::printl($s) . "</td></tr>";
-	echo "<tr><td>Values of \$s after insertsort: </td><td>" . Seq::printl(insertsort($s)) . "</td></tr>";
-	echo "</table>";
 ?>
-
+	<div style="height:20px"></div>
+	<div class="row">
+		<div class="col-5">
 <pre>
-# =======================
-# Normal insertion sort
-# =======================
-function insertionsort($arr)
+<h3><u>Normal insertion sort</u></h3>
+// code from http://codecry.com/php/insertion-sort
+
+function insertionsort($s)
 {
-    for ($i = 0 ; $i < count($arr) ; $i++) 
+    for ($i = 0 ; $i < count($s) ; $i++) 
     {
-        $val = $arr[$i];
+        $val = $s[$i];
         $j = $i - 1;
      
-        while ($j >= 0 && $arr[$j] > $val)
+        while ($j >= 0 && $s[$j] > $val)
         {
-            $arr[$j + 1] = $arr[$j];
+            $s[$j + 1] = $s[$j];
             $j--;
         }
         
-        $arr[$j + 1] = $val;
+        $s[$j + 1] = $val;
     }
 
-    return $arr;
+    return $s;
 }
-
-
-# =======================
-# using php-seq ....
-# =======================
+</pre>
+		</div>
+		<div class="col-7">
+<pre>
+<h3><u>Using php-seq</u></h3>
+include "../class/class_seq.php";
 
 function insertsort($s)
 {
@@ -81,3 +90,20 @@ function insert($el, $s)
         return ($el <= Seq::ft($s)) ? Seq::addhead($el, $s) : Seq::addhead(Seq::ft($s), insert($el, Seq::rt($s)));
 }
 </pre>
+		</div>
+	</div>
+	<div>
+		<dl class="row">
+			<dt class="col-sm-3">Values of $s before insertsort:</dt>
+			<dd class="col-sm-9"><?=Seq::printl($s);?></dd>
+			<dt class="col-sm-3">Values of $s after insertsort:</dt>
+			<dd class="col-sm-9"><?=Seq::printl(insertsort($s));?></dd>
+		</dl>
+	</div>
+	<div style="height:30px;"></div>
+	<div style="text-align:center;"><a href="/" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Home</a></div>
+	<div style="height:100px;"></div>
+</div>
+
+</body>
+</html>
